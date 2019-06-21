@@ -28,6 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     "ide50-forstudy0218.legacy.cs50.io",
+    "adventure-idea.herokuapp.com",
 ]
 
 
