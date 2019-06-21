@@ -1,1 +1,1 @@
-web: gunicorn adventure:app
+web: gunicorn adventure/wsgi:app
