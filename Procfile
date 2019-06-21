@@ -1,1 +1,1 @@
-web: gunicorn authbase.wsgi
+web: gunicorn adventure.wsgi
