@@ -1,0 +1,7 @@
+psycopg2 == 2.7.3.2
+gunicorn
+Jinja2
+Werkzeug
+requests
+pytz
+django-heroku
