@@ -25,11 +25,11 @@ def login_view(request):
         login(request, user)
         return HttpResponseRedirect(reverse('homepage'))
     else:
-        return render(request, "loginsys/login_page.html", {"message": "No user found."})
+        return render(request, "loginsys/login_page.html", {"e_message": "No user found."})
 
 def logout_view(request):
     logout(request)
-    return render(request, "loginsys/login_page.html", {"message": "Logout."})
+    return render(request, "loginsys/login_page.html", {"s_message": "Logout."})
 
 def register_form(request):
     if request.method == "POST":
@@ -62,9 +62,11 @@ def register_form(request):
             error_m = "E-mail invalid."
         else:
             # checking pass
-            # TODO create user after debug
+            # create user after debug
+            user_created = User.objects.create_user(username, email, raw_password)
             # create adventure record
-            error_m = "Your username is [" + username + "] and password is [" + raw_password + "] and e-mail is [" + email + "]"
+            AdventureRecords.objects.create(holder=user_created)
+            return render(request, "loginsys/login_page.html", {"s_message": "Registration Success"})
         # error appears
         return render(request, "loginsys/register_form.html", {"message": error_m})
 

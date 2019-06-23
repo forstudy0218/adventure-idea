@@ -10,7 +10,7 @@
             </h1>
         {% endif %}
         <h1>Form for registration</h1>
-        <form method="post" >
+        <form method="post" autocomplete="new-password">
             {% csrf_token %}
             <table>
                 <tr>
@@ -20,7 +20,7 @@
                 </tr>
                 <tr>
                     <td>Password:<span style="color: red">*</span></td>
-                    <td><input type="password" name="password_1" required /></td>
+                    <td><input type="password" name="password_1"  required /></td>
                     <td>At least 8 characters. Not entirely numeric. Letters, digits and @/./+/-/_ only</td>
                 </tr>
                 <tr>
