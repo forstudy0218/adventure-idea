@@ -42,12 +42,15 @@ def register_form(request):
             error_m = "Fill all the blank please."
         elif raw_password != pw_confirm:
             error_m = "Password confirmation fail."
+        # use objects.get will raise error
         elif not len(User.objects.filter(username=username)) == 0:
             error_m = "Username already exist."
         elif not len(User.objects.filter(email=email)) == 0:
             error_m = "E-mail already exist."
         elif len(username) < 5 or len(raw_password) < 8:
             error_m = "Username or password too short."
+        elif raw_password.isnumeric():
+            error_m = "Password too weak."
         # https://stackoverflow.com/questions/1323364
         elif not all(c in allowed_char for c in username):
             error_m = "Username not allowed."
