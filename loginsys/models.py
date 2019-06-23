@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 # Create your models here.
 class AdventureRecords(models.Model):
@@ -12,6 +13,7 @@ class AdventureRecords(models.Model):
     storybook = models.IntegerField()
     bossroom = models.IntegerField()
     blacktower = models.IntegerField()
+    holder = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default=1)
 
     def __str__(self):
         return f"{self.blacktower}{self.bossroom}{self.storybook}{self.mazetower}{self.palace}{self.desert}{self.capitalroad}{self.cave}{self.village}{self.devilzone}"
