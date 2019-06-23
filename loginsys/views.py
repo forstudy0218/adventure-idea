@@ -3,6 +3,7 @@ from django.shortcuts import render
 from .models import AdventureRecords
 from django.contrib.auth import authenticate, login, logout
 from django.urls import reverse
+from django.contrib.auth.forms import UserCreationForm
 
 # Create your views here.
 def index(request):
@@ -28,3 +29,12 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return render(request, "loginsys/login_page.html", {"message": "Logout."})
+
+def register_form(request):
+    if request.user.is_authenticated:
+        return HttpResponseRedirect(reverse('homepage'))
+    else:
+        context = {
+            "form": UserCreationForm(),
+        }
+        return render(request, "loginsys/register_form.html", context)
