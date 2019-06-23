@@ -63,6 +63,7 @@ def register_form(request):
         else:
             # checking pass
             # TODO create user after debug
+            # create adventure record
             error_m = "Your username is [" + username + "] and password is [" + raw_password + "] and e-mail is [" + email + "]"
         # error appears
         return render(request, "loginsys/register_form.html", {"message": error_m})
