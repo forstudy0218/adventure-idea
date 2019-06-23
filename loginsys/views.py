@@ -9,7 +9,7 @@ def index(request):
     if not request.user.is_authenticated:
         return render(request, "loginsys/login_page.html")
     context = {
-        "adRec": AdventureRecords.objects.all()
+        "adRec": AdventureRecords.objects.get(holder_id=request.user)
     }
     # no html
     # return HttpResponse("Hello, test.")

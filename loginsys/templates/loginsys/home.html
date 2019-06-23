@@ -5,11 +5,7 @@
     </head>
     <body>
         <h1>Hello, {{ user.username }}</h1>
-        <h2>Your level</h1>
-        {% for i in adRec %}
-            <span style="color: grey">{{ i }}</span>
-        {% endfor %}
-        <br>
+        <h2 style="color: grey">Your level: {{ adRec }}</h1>
         <a href="{% url 'logout' %}">Logout</a>
     </body>
 </html>
