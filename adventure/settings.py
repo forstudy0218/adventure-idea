@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'gloum8q*o6%wb2-v(4d&#pfjpw((57daf5w#y(r94a#hi3xoxl'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     "ide50-forstudy0218.legacy.cs50.io",
