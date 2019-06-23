@@ -29,7 +29,7 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)
-    return render(request, "loginsys/login_page.html", {"s_message": "Logout."})
+    return render(request, "loginsys/login_page.html", {"s_message": "Logout successfully."})
 
 def register_form(request):
     if request.method == "POST":
