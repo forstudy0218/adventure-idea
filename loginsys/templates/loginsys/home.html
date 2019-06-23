@@ -4,7 +4,8 @@
         <title>Home</title>
     </head>
     <body>
-        <h1>Your level</h1>
+        <h1>Hello, {{ user.username }}</h1>
+        <h2>Your level</h1>
         {% for i in adRec %}
             <span style="color: grey">{{ i }}</span>
         {% endfor %}
